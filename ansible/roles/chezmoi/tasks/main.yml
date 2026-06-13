@@ -13,6 +13,6 @@
 - name: "Initialize chezmoi"
   ansible.builtin.command:
     cmd: >
-      chezmoi init --source {{ dotfiles_repo_root }}/chezmoi
+      chezmoi init --source {{ chezmoi_dotfiles_repo_root }}/chezmoi
   args:
     creates: "{{ chezmoi_dotfiles_repo_root }}/chezmoi"
