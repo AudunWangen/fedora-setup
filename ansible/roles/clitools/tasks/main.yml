@@ -1,0 +1,9 @@
+---
+- name: "Install command line utilities"
+  ansible.builtin.dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - vim
+    - fzf
+    - nmap
