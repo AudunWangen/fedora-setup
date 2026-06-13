@@ -8,7 +8,7 @@
 - name: "Check if chezmoi is initialized"
   ansible.builtin.stat:
     path: "{{ ansible_user_dir }}/.local/share/chezmoi"
-    register: chezmoi_source
+  register: chezmoi_source
 
 - name: "Initialize chezmoi"
   ansible.builtin.command:
