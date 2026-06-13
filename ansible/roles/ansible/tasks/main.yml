@@ -1,0 +1,8 @@
+---
+- name: "Install other Ansible packages"
+  ansible.builtin.dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - ansible-lint
+  become: true

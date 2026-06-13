@@ -1,0 +1,7 @@
+---
+- name: "Initial setup"
+  hosts: localhost
+  become: false
+  roles:
+    - ansible
+    - chezmoi
