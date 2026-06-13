@@ -7,3 +7,4 @@
     - vim
     - fzf
     - nmap
+  become: true
