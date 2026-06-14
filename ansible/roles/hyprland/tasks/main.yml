@@ -36,3 +36,14 @@
     group: root
     mode: '0644'
   become: true
+
+- name: "Add groups to greetd user"
+  ansible.builtin.user:
+    name: greetd
+    append: true
+    groups:
+      - video
+      - input
+  become: true
+
+# May have to add some custom selinux stuff as well. The files have been added in ./files for that
