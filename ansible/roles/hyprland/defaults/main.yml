@@ -1,0 +1,3 @@
+---
+hyperland_greetd_command: "tuigreet --remember --time --cmd Hyprland"
+hyperland_greetd_user: "greetd"

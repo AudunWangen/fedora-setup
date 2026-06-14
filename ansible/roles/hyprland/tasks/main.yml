@@ -1,0 +1,38 @@
+---
+- name: "Add rpmfusion repos"
+  ansible.builtin.dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+    - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+  become: true
+
+- name: "Add COPR repos"
+  ansible.builtin.command:
+    cmd: dnf -y copr enable ashbuk/Hyprland-Fedora
+    creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ashbuk:Hyprland-Fedora.repo
+  become: true
+
+- name: "Install packages for hyprland"
+  ansible.builtin.dnf:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - hyprland
+    - greetd
+    - tuigreet
+    - kitty
+    - waybar
+    - wofi
+    - xdg-desktop-portal-hyprland
+  become: true
+
+- name: "Configure greetd"
+  ansible.builtin.template:
+    src: greetd.toml.j2
+    dest: /etc/greetd/config.toml
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
