@@ -13,9 +13,9 @@ dnf install git
 git clone git@github.com:AudunWangen/fedora-setup.git
 ```
 ## Bootstrap
-Trigger the bootstrap script to install Ansible and chezmoi.
+Trigger the bootstrap script to install Ansible, chezmoi and hyprland.
 ```
-cd dotfiles
+cd fedora-setup
 ./bootstrap.sh
 ```
 
