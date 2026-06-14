@@ -7,4 +7,21 @@
     - vim
     - fzf
     - nmap
+    - tmux
+    - flatpak
+  become: true
+
+- name: "Add Flathub repository"
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+  become: true
+
+- name: "Install Flatpak applications"
+  community.general.flatpak:
+    name: "{{ item }}"
+    remote: flathub
+    state: present
+  loop: "{{ clitools_flatpak_apps }}"
   become: true
