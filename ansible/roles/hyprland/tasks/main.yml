@@ -10,8 +10,8 @@
 
 - name: "Add COPR repos"
   ansible.builtin.command:
-    cmd: dnf -y copr enable ashbuk/Hyprland-Fedora
-    creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ashbuk:Hyprland-Fedora.repo
+    cmd: dnf -y copr enable lionheartp/Hyprland
+    creates: /etc/yum.repos.d/_copr\:copr.fedorainfracloud.org\:lionheartp\:Hyprland.repo
   become: true
 
 - name: "Install packages for hyprland"
@@ -20,6 +20,7 @@
     state: present
   loop:
     - hyprland
+    - hyprland-guiutils
     - greetd
     - tuigreet
     - kitty

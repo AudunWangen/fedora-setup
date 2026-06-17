@@ -1,0 +1,8 @@
+---
+- name: "Initial setup"
+  hosts: localhost
+  become: false
+  tasks:
+    - name: "Just testing Ansible playbook"
+      ansible.builtin.debug:
+        msg: "Ansible seems to work"
