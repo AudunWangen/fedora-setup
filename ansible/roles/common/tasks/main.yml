@@ -1,6 +1,10 @@
 ---
 - name: "Install fonts"
   ansible.builtin.dnf:
-    name: fontawesome-fonts-all
+    name: "{{ item }}"
     state: present
+  loop:
+    - fontawesome-fonts-all
+    - jetbrains-mono-fonts-all
+    - source-foundry-hack-fonts
   become: true
