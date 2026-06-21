@@ -30,6 +30,7 @@
     - wofi
     - xdg-desktop-portal-hyprland
     - pavucontrol
+    - mako
   become: true
 
 - name: "Configure greetd"
