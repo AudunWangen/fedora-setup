@@ -6,5 +6,6 @@
     - ansible
     - chezmoi
     - clitools
+    - common
     - nvidia
     - hyprland
