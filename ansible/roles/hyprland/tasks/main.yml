@@ -29,6 +29,7 @@
     - waybar
     - wofi
     - xdg-desktop-portal-hyprland
+    - pavucontrol
   become: true
 
 - name: "Configure greetd"
